@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        #price {
+            font-family: Arial, Helvetica, sans-serif;
+            border: solid 1px #dfe3e9;
+            width: 235px;
+            height: 46px;
+            border-radius: 7px;
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                transition: .3s;
+                padding: 7px 10px;
+                width: 50%;
+                height: 100%;
+                outline: none;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        #divMin {
+            transition: .5s;
+            border-right: 1px solid #dfe3e9;
+            position: relative;
+        }
+        #divMax {
+            transition: .5s;
+            position: relative;
+        }
+
+        /* .price-inp {
+            width: 50%;
+            height: 100%;
+            outline: none;
+        } */
+        #inpMin {
+            width: 73%;
+            display: none;
+            outline: none;
+            border: none;
+        }
+
+        #inpMax {
+            width: 73%;
+            display: none;
+            border: none;
+            outline: none;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="price">
+        <div onclick="minYaz()" id="divMin">
+            <span style="transition: .5s; color: #8d94ad;"  id="textMin">Qiymət, min</span>
+            <input id="inpMin" type="number">
+            <i onclick="baglaMin(event)" id="priceİcoMin" style="position: absolute; right: 12px;bottom: 5px; font-size:14px ; color: #8d94ad; display: none; cursor: pointer;" class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <div onclick="maxYaz()" id="divMax">
+            <span style="transition: .5s; color: #8d94ad;" id="textMax">maks.</span>
+            <input id="inpMax" type="number">
+            <i onclick="baglaMax(event)" id="priceİcoMax" style="position: absolute; right: 12px;bottom: 5px; font-size:14px ; color: #8d94ad; display: none; cursor: pointer;" class="fa-regular fa-circle-xmark"></i>
+
+        </div>
+    </div>
+    <script>
+        const inpMin = document.getElementById('inpMin');
+        const inpMax = document.getElementById('inpMax');
+        const textMin = document.getElementById('textMin');
+        const textMax = document.getElementById('textMax');
+        const divMin = document.getElementById('divMin');
+        const divMax = document.getElementById('divMax');
+        const priceİcoMin = document.getElementById('priceİcoMin');
+        const priceİcoMax = document.getElementById('priceİcoMax');
+    
+        function minYaz() {
+            divMin.style.display = 'block';
+            inpMin.style.display = 'initial';
+            textMin.style.fontSize = '13px';
+            priceİcoMin.style.display = 'initial';
+        }
+    
+        function maxYaz() {
+            divMax.style.display = 'block';
+            inpMax.style.display = 'initial';
+            textMax.style.fontSize = '13px';
+            priceİcoMax.style.display = 'initial';
+        }
+    
+        function baglaMin(event) {
+            event.stopPropagation();  // Prevent the event from bubbling up
+            inpMin.style.display = 'none';
+            textMin.style.fontSize = 'initial';
+            priceİcoMin.style.display = 'none';
+            divMin.style.display = 'flex';
+
+        }
+    
+        function baglaMax(event) {
+            event.stopPropagation();  // Prevent the event from bubbling up
+            inpMax.style.display = 'none';
+            textMax.style.fontSize = 'initial';
+            priceİcoMax.style.display = 'none';
+            divMax.style.display = 'flex';
+
+        }
+
+    </script>
+    
+</body>
+
+</html>

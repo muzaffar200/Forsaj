@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Forsaj.Az</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="header-top-left">
+                    <p><a href="">Tap.az</a></p>
+                    <p class="sil"> <a href="">Boss.az</a></p>
+                    <p class="sil"><a href="">Bina.az</a></p>
+                </div>
+                <div class="header-top-right">
+                    <p class="destek" style="color: black;">Dəstək:(012)505-77-55</p>
+                    <p class="destek">Yardım</p>
+                    <p>RU</p>
+                    <p><i class="fa-solid fa-heart"></i>Seçilmişlər</p>
+                    <p><i class="fa-solid fa-user"></i>Giriş</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <div class="nav-con">
+                    <i onclick="burgerShow()" id="bar-icon" class="fa-solid fa-bars"></i>
+                    <ul id="bugerMenu">
+                        <li style="display: flex; justify-content: end; padding: 0;"><i onclick="burgerBagla()" class="fa-solid fa-xmark"></i></li>
+                        <li>Bütün elanlar</li>
+                        <li>Salonlar</li>
+                        <li>Avtokataloq</li>
+                        <li>Aksesuarlar</li>
+                        <li>Audio və video texnika </li>
+                        <li>Avto kosmetika və avtokimya</li>
+                        <li>Ehtiyat hissələri</li>
+                        <li>Ehtiyat hissələri və
+                            aksesuarlar</li>
+                        <li>GPS naviqatorlar</li>
+                        <li>Qeyydiyat nişanları </li>
+                        <li>Siqnalizasiyalar</li>
+                        <li>Videoqeydiyyatçılar</li>
+                        <li>Şinlər,diskler və təkərlər</li>
+                        <li>Digər</li>
+                    </ul>
+                    <ul class="nav-list">
+                        <li><a style="font-size: 18px; font-weight: 700;" href="">FORSAJ.AZ</a></li>
+                        <li><a href="">Bütün elanlar</a></li>
+                        <li><a href="">Salonlar</a></li>
+                        <li><a href="">Avtokataloq</a></li>
+                        <li><a style="padding: 10px 0;" href="">Moto</a></li>
+                        <li class="ehtiyat"><a style=" position: relative; padding:10px 0;" href="">Ehtiyat hissələri və
+                                aksesuarlar</a>
+                            <div class="ehtiyat-drop">
+                                <ul>
+                                    <li>Aksesuarlar</li>
+                                    <li>Audio və video texnika </li>
+                                    <li>Avto kosmetika və avtokimya</li>
+                                    <li>Ehtiyat hissələri</li>
+                                    <li>GPS naviqatorlar</li>
+                                    <li>Qeyydiyat nişanları </li>
+                                    <li>Siqnalizasiyalar</li>
+                                    <li>Videoqeydiyyatçılar</li>
+                                    <li>Şinlər,diskler və təkərlər</li>
+                                    <li>Digər</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li  class="icare"><a  style="padding: 5px;" href="">İcarə</a>
+                            <div class="ehtiyat-drop drop2">
+                                <ul>
+                                    <li>Avtomobillər </li>
+                                    <li>avtobuslar və mikroavtobuslar</li>
+                                    <li>Motosiklet və mopedlər</li>
+                                    <li>Xüsusi texnika </li>
+                                    <li>Digər</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <button><i class="fa-solid fa-plus"></i>Yeni elan</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main >
+        <section style="background-color:#ebedf3;" id="filter">
+            <div class="container">
+                <div style="display: flex; justify-content:center; flex-wrap: wrap; gap: 25px;" class="boxs ">
+                    <div class="boxx">
+                        <div id="markaDrop" class="markaDrop  bord7 mrg">
+                            <div id="marka" class="marka bg-white">
+                                <span><span id="wordMarka" class="wordMarka">Marka</span>
+                                    <p style="margin: 0; display: none; color: #212c3a;" id="secilmisMarka"
+                                        class="secilmisMarka"></p>
+                                </span>
+                                <label for="inputMarka" onclick="markaDrop()"
+                                    class="arrow fa-solid fa-chevron-down"></label>
+                                <input oninput="filterMarka()" placeholder="Marka yazın" id="inputMarka"
+                                    class="inputMarka" type="text">
+                            </div>
+                            <ul id="markalar" style="top: 208px;" class="markalar">
+                            </ul>
+                        </div>
+                        <div id="price" class="bord7 bg-white ">
+                            <div onclick="minYaz()" id="divMin" class="">
+                                <span style="transition: .2s; color: #8d94ad;" id="textMin">Qiymət, min</span>
+                                <input id="inpMin" type="number">
+                                <i onclick="baglaMin(event)" id="priceİcoMin"
+                                    style="position: absolute; right: 12px;bottom: 5px; font-size:14px ; color: #8d94ad; display: none; cursor: pointer;"
+                                    class="fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div onclick="maxYaz()" id="divMax">
+                                <span style="transition: .2s; color: #8d94ad;" id="textMax">maks.</span>
+                                <input id="inpMax" type="number">
+                                <i onclick="baglaMax(event)" id="priceİcoMax"
+                                    style="position: absolute; right: 12px;bottom: 5px; font-size:14px ; color: #8d94ad; display: none; cursor: pointer;"
+                                    class="fa-regular fa-circle-xmark"></i>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="boxx">
+                        <div id="modelDrop" class="markaDrop  bord7 mrg">
+                            <div id="model" class="marka bg-white">
+                                <span><span id="wordModel" class="wordMarka">Model</span>
+                                    <p style="margin: 0; display: none; color: #212c3a;" id="secilmisModel"
+                                        class="secilmisMarka"></p>
+                                </span>
+                                <label id="arrowModel" for="inputModel" onclick="modelDrop()"
+                                    class="arrow fa-solid fa-chevron-down"></label>
+                                <input oninput="filterModel()" placeholder="Model yazın" id="inputModel"
+                                    class="inputMarka" type="text">
+                            </div>
+                            <ul id="modeller" style="top: 208px;" class="markalar">
+
+                            </ul>
+                        </div>
+                        <div id="barterAndKredit" class="">
+                            <div id="currency" class="bg-white bord7 ">
+                                <div onclick="currencyDrop()"
+                                    style="display: flex; justify-content: space-between; align-items: center;width: 100%;padding: 0 10px; height: 100%;">
+                                    <p style="margin: 0;" id="secilmisCurrency  ">AZN</p>
+                                    <label id="currencyArrow" for="inputModel" class="fa-solid fa-chevron-down"></label>
+                                </div>
+                                <ul id="currencyList" style="top: 280px;">
+                                    <li onclick="currencySec(this)">AZN</li>
+                                    <li onclick="currencySec(this)">USD</li>
+                                    <li onclick="currencySec(this)">EUR</li>
+                                </ul>
+                            </div>
+                            <div onclick="kreditSec(this)" id="kredit" class="bart-butons bg-white   bord7 ">
+                                <p>Kredit</p>
+                            </div>
+                            <div onclick="barterSec(this)" id="barter" class="bart-butons bg-white bord7 ">
+                                <p>Barter</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxx">
+                        <div id="veziyet" class="bg-white bord7 mrg">
+                            <div onclick="changeColor(this)" id="hamsi">
+                                <p>Hamsı</p>
+                            </div>
+                            <div onclick="changeColor(this)" id="yeni">
+                                <p>Yeni</p>
+                            </div>
+                            <div onclick="changeColor(this)" id="surulmus">
+                                <p>Sürülmüş</p>
+                            </div>
+
+                        </div>
+                        <div id="banDrop" class="markaDrop  bord7 mrg">
+                            <div id="ban" class="marka bg-white">
+                                <span><span id="wordBan" class="wordMarka">Ban növü</span>
+                                    <p style="margin: 0; display: none; color: #212c3a;" id="secilmisBan"
+                                        class="secilmisMarka"></p>
+                                </span>
+                                <label id="arrowBan" for="inputBan" onclick="banDrop()"
+                                    class="arrow fa-solid fa-chevron-down"></label>
+                                <input oninput="filterBan()" placeholder="Ban yazın" id="inputBan" class="inputMarka"
+                                    type="text">
+                            </div>
+                            <ul style="top: 280px;" id="banlar" class="markalar">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="boxx">
+                        <div id="seherDrop" class="markaDrop  bord7 mrg">
+                            <div id="seher" class="marka bg-white">
+                                <span><span id="wordSeher" class="wordMarka">Şəhər</span>
+                                    <p style="margin: 0; display: none; color: #212c3a;" id="secilmisSeher"
+                                        class="secilmisMarka"></p>
+                                </span>
+                                <label id="arrowSeher" for="inputSeher" onclick="seherrDrop()"
+                                    class="arrow fa-solid fa-chevron-down"></label>
+                                <input oninput="filterSeher()" placeholder="Şəhər yazın" id="inputSeher"
+                                    class="inputMarka" type="text">
+                            </div>
+                            <ul style="top: 210px;" id="seherler" class="markalar">
+
+                            </ul>
+                        </div>
+                        <div id="year" class="bg-white bord7 mrg">
+                            <div onclick="yearShow(this)" id="yearMin" class="">
+                                <div class="boss">
+
+                                    <div>
+                                        <p style="  color: #8d94ad;">il,min</p>
+                                        <p id="minYearText"></p>
+
+                                    </div>
+                                    <label onclick="" class="arrow fa-solid fa-chevron-down"></label>
+
+                                </div>
+                                <ul class="iller">
+                                </ul>
+                            </div>
+                            <div onclick="yearShow(this)" id="yearMax">
+                                <div class="boss">
+                                    <div>
+                                        <p style="  color: #8d94ad;">maks</p>
+                                        <p id="maxYearText"></p>
+
+                                    </div>
+                                    <label onclick="" class="arrow fa-solid fa-chevron-down"></label>
+
+                                </div>
+                                <ul class="iller">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="filterEnd">
+                    <div class="elanSayi">Bu gün: <span style="color: #4c88f8;"> 1646 yeni elan</span></div>
+                    <div class="elanBtn">
+                        <div onclick="allSifirla()" style="color: #ca1016; cursor: pointer;">Sıfırla</div>
+                        <div style="color: #ca1016; cursor: pointer;">Daha çox filter <label
+                                style="color: #ca1016; cursor: pointer;" onclick=""
+                                class="arrow fa-solid fa-chevron-down"></label></div>
+                        <div  onclick="FilterElan()" style="cursor: pointer;" class="bttnn "> Elanları göstər</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div style="min-height: 500px; padding-top: 50px;" class="container">
+                <div id="products"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="qutular">
+                <div class="qut">Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş elanların məzmununa görə
+                    məsuliyyət daşımır.</div>
+                <div class="qutu">2006-2024 Digital Classifieds MMC. VÖEN: 1405631661 </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/data.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
